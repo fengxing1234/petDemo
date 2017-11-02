@@ -86,7 +86,6 @@ public class GuideActivity extends AppCompatActivity {
         startAnimation(0);
     }
 
-    //初始化数据
     private void initData() {
         for (int i = 0; i < Config.LEADER_TOP.length; i++) {
             View view = getLayoutInflater().inflate(R.layout.guide_viewpager, null);
