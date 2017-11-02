@@ -1,4 +1,4 @@
-package cn.picc.com.petdemo;
+package cn.picc.com.petdemo.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
+import cn.picc.com.petdemo.R;
+
 public class SplashActivity extends AppCompatActivity {
 
     private static final int HANDLER_CODE = 0x123;
@@ -21,6 +23,7 @@ public class SplashActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             Intent intent = new Intent(SplashActivity.this, GuideActivity.class);
             startActivity(intent);
+            finish();
             super.handleMessage(msg);
         }
     };
