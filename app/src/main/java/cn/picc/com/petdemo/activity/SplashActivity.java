@@ -1,17 +1,13 @@
 package cn.picc.com.petdemo.activity;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
 
 import cn.picc.com.petdemo.R;
+import cn.picc.com.petdemo.util.StatusBarUtils;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -32,19 +28,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            Window window = getWindow();
-            //设置状态栏的颜色 白色
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.WHITE);
-            Log.d(TAG, "沉浸");
-
-
-            //设置导航栏的颜色
-            window.setNavigationBarColor(getResources().getColor(R.color.colorWhite));
-
-        }
-
+        StatusBarUtils.setStatusBar(this, R.color.colorWhite);
         setContentView(R.layout.activity_splash);
         handler.sendEmptyMessageDelayed(HANDLER_CODE, 1500);
     }

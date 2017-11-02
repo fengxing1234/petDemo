@@ -26,6 +26,7 @@ import butterknife.OnClick;
 import cn.picc.com.petdemo.Config;
 import cn.picc.com.petdemo.R;
 import cn.picc.com.petdemo.adapter.GuideAdapter;
+import cn.picc.com.petdemo.util.StatusBarUtils;
 
 /**
  * Created by fengxing on 2017/10/30.
@@ -61,6 +62,7 @@ public class GuideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        StatusBarUtils.setStatusBar(this, R.color.colorWhite);
         setContentView(R.layout.activity_guide);
         ButterKnife.bind(this);
         views = new ArrayList<>();
