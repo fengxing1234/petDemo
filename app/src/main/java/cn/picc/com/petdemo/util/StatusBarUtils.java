@@ -16,7 +16,7 @@ public class StatusBarUtils {
             Window window = activity.getWindow();
             //设置状态栏的颜色 白色
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(resource);
+            window.setStatusBarColor(activity.getResources().getColor(resource));
 
             //设置导航栏的颜色
             window.setNavigationBarColor(activity.getResources().getColor(resource));
